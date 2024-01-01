@@ -86,7 +86,7 @@ define('CALENDAR_VIEW_TABLE', 'table');
 
 define('AVAILABILITIES_TYPE_FLEXIBLE', 'flexible');
 define('AVAILABILITIES_TYPE_FIXED', 'fixed');
-
+define('AVAILABILITIES_INTERVAL', 30); // Minutes
 define('EVENT_MINIMUM_DURATION', 5); // Minutes
 
 /* End of file constants.php */

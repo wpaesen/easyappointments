@@ -304,7 +304,7 @@ class Availability {
         {
             $start_hour = new DateTime($date . ' ' . $period['start']);
             $end_hour = new DateTime($date . ' ' . $period['end']);
-            $interval = $service['availabilities_type'] === AVAILABILITIES_TYPE_FIXED ? (int)$service['duration'] : 15;
+            $interval = $service['availabilities_type'] === AVAILABILITIES_TYPE_FIXED ? (int)$service['duration'] : AVAILABILITIES_INTERVAL;
 
             $current_hour = $start_hour;
             $diff = $current_hour->diff($end_hour);
@@ -378,7 +378,7 @@ class Availability {
 
         $hours = [];
 
-        $interval_value = $service['availabilities_type'] == AVAILABILITIES_TYPE_FIXED ? $service['duration'] : '15';
+        $interval_value = $service['availabilities_type'] == AVAILABILITIES_TYPE_FIXED ? $service['duration'] : AVAILABILITIES_INTERVAL;
         $interval = new DateInterval('PT' . (int)$interval_value . 'M');
         $duration = new DateInterval('PT' . (int)$service['duration'] . 'M');
 
