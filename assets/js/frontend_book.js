@@ -748,32 +748,33 @@ window.FrontendBook = window.FrontendBook || {};
                 'html': GeneralFunctions.escapeHtml(service.description).replaceAll('\n', '<br/>')
             })
                 .appendTo($serviceDescription);
-        }
+        } else {
 
-        if (service.duration || Number(service.price) > 0 || service.location) {
-            $('<br/>')
-                .appendTo($serviceDescription);
-        }
+            if (service.duration || Number(service.price) > 0 || service.location) {
+                $('<br/>')
+                    .appendTo($serviceDescription);
+            }
 
-        if (service.duration) {
-            $('<span/>', {
-                'text': '[' + EALang.duration + ' ' + service.duration + ' ' + EALang.minutes + ']'
-            })
-                .appendTo($serviceDescription);
-        }
+            if (service.duration) {
+                $('<span/>', {
+                    'text': '[' + EALang.duration + ' ' + service.duration + ' ' + EALang.minutes + ']'
+                })
+                    .appendTo($serviceDescription);
+            }
 
-        if (Number(service.price) > 0) {
-            $('<span/>', {
-                'text': '[' + EALang.price + ' ' + service.price + ' ' + service.currency + ']'
-            })
-                .appendTo($serviceDescription);
-        }
+            if (Number(service.price) > 0) {
+                $('<span/>', {
+                    'text': '[' + EALang.price + ' ' + service.price + ' ' + service.currency + ']'
+                })
+                    .appendTo($serviceDescription);
+            }
 
-        if (service.location) {
-            $('<span/>', {
-                'text': '[' + EALang.location + ' ' + service.location + ']'
-            })
-                .appendTo($serviceDescription);
+            if (service.location) {
+                $('<span/>', {
+                    'text': '[' + EALang.location + ' ' + service.location + ']'
+                })
+                    .appendTo($serviceDescription);
+            }
         }
     }
 
